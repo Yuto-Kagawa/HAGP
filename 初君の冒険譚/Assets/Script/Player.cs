@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
     {
         // 現在位置をPositionに代入
         Vector2 Position = transform.position;
+
         // 左キーを押し続けていたら
         if (Input.GetKey("left"))
         {

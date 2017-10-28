@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: 34fd36bb3b445014d9c915be489f6ac1
-timeCreated: 1509079870
+guid: dba3094691895da44b7e9c7cc5de2adb
+timeCreated: 1509090472
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - textAsset: {fileID: 4900000, guid: c24855d80a16cf5489b69d8fec292c9a, type: 3}
-  - Block: {fileID: 1584231092883598, guid: b5001cef2845d7a46ad83f764593feff, type: 2}
   - Player: {fileID: 1846333727519896, guid: e9a6a9a21393f7848ad1d42c94259c21, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

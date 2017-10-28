@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     Rigidbody2D rb2d;
     bool jump = false;
 
+    // 速度
+    public Vector2 SPEED = new Vector2(0.05f, 0.05f);
+
     // Use this for initialization
     void Start()
     {
@@ -23,6 +26,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 移動処理
+        Move();
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
             direction = 1f;
@@ -37,7 +43,7 @@ public class Player : MonoBehaviour
         }
 
         //キャラのy軸のdirection方向にscrollの力をかける
-        rb2d.velocity = new Vector2(scroll * direction, rb2d.velocity.y);
+       // rb2d.velocity = new Vector2(scroll * direction, rb2d.velocity.y);
 
         //ジャンプ判定
         if (Input.GetKeyDown("space") && !jump)
@@ -46,6 +52,28 @@ public class Player : MonoBehaviour
             jump = true;
         }
     }
+
+    // 移動関数
+    void Move()
+    {
+        // 現在位置をPositionに代入
+        Vector2 Position = transform.position;
+        // 左キーを押し続けていたら
+        if (Input.GetKey("left"))
+        {
+            // 代入したPositionに対して加算減算を行う
+            Position.x -= SPEED.x;
+        }
+        else if (Input.GetKey("right"))
+        { // 右キーを押し続けていたら
+          // 代入したPositionに対して加算減算を行う
+            Position.x += SPEED.x;
+        }
+      
+        // 現在の位置に加算減算を行ったPositionを代入する
+        transform.position = Position;
+    }
+
 
     void OnCollisionEnter2D(Collision2D other)
     {

@@ -42,9 +42,6 @@ public class Player : MonoBehaviour
             direction = 0f;
         }
 
-        //キャラのy軸のdirection方向にscrollの力をかける
-       // rb2d.velocity = new Vector2(scroll * direction, rb2d.velocity.y);
-
         //ジャンプ判定
         if (Input.GetKeyDown("space") && !jump)
         {
